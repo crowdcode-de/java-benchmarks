@@ -1,4 +1,4 @@
-package io.crowdcode.java.benchmarks.date;
+package io.crowdcode.java.benchmarks.time;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.infra.Blackhole;

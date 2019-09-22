@@ -1,4 +1,4 @@
-package io.crowdcode.java.benchmarks.date;
+package io.crowdcode.java.benchmarks.time;
 
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.State;
