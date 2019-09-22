@@ -28,7 +28,7 @@ mvn archetype:generate
        -Dversion=1.0-SNAPSHOT
 ```
 
-# Benchmark Results
+## Benchmark Results
 
 REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
 why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
@@ -36,7 +36,7 @@ experiments, perform baseline and negative tests that provide experimental contr
 the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
 Do not assume the numbers tell you what you want them to tell.
 
-## Use Multiply Instead Of Divide 
+### Use Multiply Instead Of Divide 
 
 Check `MultiplyVsDivisionBenchmark` to see that it is faster to multiply than to divide doubles.
 
@@ -66,7 +66,7 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 |MultiplyVsDivisionBenchmark.divideDoublesWithMultiply | thrpt |   5  | 508495,675 | ± 8033,898 | ops/s|
 
 
-## Random Subset Without Duplicates
+### Random Subset Without Duplicates
  
 `RandomSubsetBenchmark`
 
@@ -83,7 +83,7 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 |RandomSubsetBenchmark.subsetWithStreams               | thrpt |   5|  1200,939 | ± 140,346 | ops/s|
 
 
-## Date Parsing And Adding An Hour Benchmark 
+### Date Parsing And Adding An Hour Benchmark 
  
 `DateBenchmark`
 
@@ -94,7 +94,7 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 |DateBenchmark.dateParsingWithFormat | thrpt |   5 |    728327,799 | ±    19937,432 | ops/s|
 |DateBenchmark.parsingLocalDateTime  | thrpt |   5 |    873308,951 | ±    97291,855 | ops/s|
 
-## Using Initial Capacity At ArrayList
+### Using Initial Capacity At ArrayList
 
 Run with JDK 12 and `java -jar target/benchmarks.jar -f 1 -r 2 -w 2 -wi 5 InitialCapacityBenchmark`
 
@@ -108,7 +108,7 @@ Run with JDK 12 and `java -jar target/benchmarks.jar -f 1 -r 2 -w 2 -wi 5 Initia
  
 
 
-## Created By
+### Created By
 
 [CROWDCODE GmbH & Co. KG](https://www.crowdcode.io)
 
