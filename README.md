@@ -2,14 +2,17 @@
 
 These benchmarks are build with [OpenJDK JMH](https://openjdk.java.net/projects/code-tools/jmh/).
 
+Just another collection of typical Java Code Benchmarks.
+
 ### How To Run The Benchmarks
 
 Build the project `mvn clean install`.
  
 You can call `java -jar target/benchmarks.jar -help` to see available command line parameters.
 
+For instance, 
 ```
-  java -Xmx1G -jar targget/benchmarks.jar -r 5 -i -wi 5 EmptyBenchmark
+  java -Xmx1G -jar targget/benchmarks.jar -f 1 -r 5 -i -wi 5 EmptyBenchmark
 ```
 
 ### Create Your Own Benchmark
