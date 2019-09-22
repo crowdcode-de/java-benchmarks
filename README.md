@@ -53,7 +53,22 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 |MultiplyVsDivisionBenchmark.divideDoublesWithMultiply | thrpt |   5  | 508495,675 | ± 8033,898 | ops/s|
 
 
+## Random Subset Without Duplicates - `RandomSubsetBenchmark`
+
+Results with JDK 13:
+
+````
+java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivisionBenchmark
+````
+
+|Benchmark                                             |  Mode |  Cnt |      Score |      Error | Units|
+|:-----------------------------------------------------|:-----:|:----:|:----------:|:----------:|:----:|
+|RandomSubsetBenchmark.subsetWithForLoop               | thrpt |   5|  1720,292 | ± 330,771 | ops/s|
+|RandomSubsetBenchmark.subsetWithParallelStreams       | thrpt |   5|   779,079 | ±  23,238 | ops/s|
+|RandomSubsetBenchmark.subsetWithStreams               | thrpt |   5|  1200,939 | ± 140,346 | ops/s|
 
 
+## Created By
 
 [CROWDCODE GmbH & Co. KG](https://www.crowdcode.io)
+
