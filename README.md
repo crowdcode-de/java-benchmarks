@@ -28,6 +28,14 @@ mvn archetype:generate
        -Dversion=1.0-SNAPSHOT
 ```
 
+# Benchmark Results
+
+REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
+why the numbers are the way they are. Use profilers (see -prof, -lprof), design factorial
+experiments, perform baseline and negative tests that provide experimental control, make sure
+the benchmarking environment is safe on JVM/OS/HW level, ask for reviews from the domain experts.
+Do not assume the numbers tell you what you want them to tell.
+
 ## Use Multiply Instead Of Divide 
 
 Check `MultiplyVsDivisionBenchmark` to see that it is faster to multiply than to divide doubles.
@@ -86,6 +94,18 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 |DateBenchmark.dateParsingWithFormat | thrpt |   5 |    728327,799 | ±    19937,432 | ops/s|
 |DateBenchmark.parsingLocalDateTime  | thrpt |   5 |    873308,951 | ±    97291,855 | ops/s|
 
+## Using Initial Capacity At ArrayList
+
+Run with JDK 12 and `java -jar target/benchmarks.jar -f 1 -r 2 -w 2 -wi 5 InitialCapacityBenchmark`
+
+|Benchmark                                                     |  Mode |  Cnt | Score |    Error | Units|
+|:-------------------------------------------------------------|:-----:|:----:|:-----:|:--------:|:----:|
+|InitialCapacityBenchmark.addWithInitialCapacity               | thrpt |   5 | 29,552 | ± 13,596 | ops/s|
+|InitialCapacityBenchmark.addWithInitialCapacityWithStreams    | thrpt |   5 | 25,123 | ± 10,103 | ops/s|
+|InitialCapacityBenchmark.addWithoutInitialCapacity            | thrpt |   5 | 19,304 | ±  3,389 | ops/s|
+|InitialCapacityBenchmark.addWithoutInitialCapacityWithStreams | thrpt |   5 | 19,012 | ±  6,849 | ops/s|
+
+ 
 
 
 ## Created By
