@@ -1,4 +1,4 @@
-package io.crowdcode.java.benchmarks;
+package io.crowdcode.java.benchmarks.streams;
 
 import org.openjdk.jmh.annotations.Benchmark;
 import org.openjdk.jmh.annotations.Scope;
