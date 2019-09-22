@@ -70,6 +70,17 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 |RandomSubsetBenchmark.subsetWithStreams               | thrpt |   5|  1200,939 | ± 140,346 | ops/s|
 
 
+## Date Parsing And Adding An Hour Benchmark - `DateBenchmark`
+
+|Benchmark                                             |  Mode |  Cnt |      Score |      Error | Units|
+|:-----------------------------------------------------|:-----:|:----:|:----------:|:----------:|:----:|
+|DateBenchmark.dateLong              | thrpt |   5 | 386571214,471 | ± 10171784,541 | ops/s|
+|DateBenchmark.dateLongWithFormat    | thrpt |   5 |   3358368,673 | ±    31265,425 | ops/s|
+|DateBenchmark.dateParsingWithFormat | thrpt |   5 |    728327,799 | ±    19937,432 | ops/s|
+|DateBenchmark.parsingLocalDateTime  | thrpt |   5 |    873308,951 | ±    97291,855 | ops/s|
+
+
+
 ## Created By
 
 [CROWDCODE GmbH & Co. KG](https://www.crowdcode.io)
