@@ -25,7 +25,7 @@ mvn archetype:generate
        -Dversion=1.0-SNAPSHOT
 ```
 
-## Use Multiply Instead Of Divide
+## Use Multiply Instead Of Divide (`MultiplyVsDivisionBenchmark`)
 
 It is faster to multiply than to divide
 
@@ -42,6 +42,8 @@ better use
     double factor = 1 / divisor;
     double a = nextDouble() * factor; // repeat this 1_000 times
 ```
+
+Results with JDK 13:
 
 ````
 java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivisionBenchmark
