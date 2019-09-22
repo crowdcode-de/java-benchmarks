@@ -1,5 +1,7 @@
 # Java Micro-Benchmarks With JMH
 
+[![Build Status](https://travis-ci.org/crowdcode-de/java-benchmark.svg?branch=master)](https://travis-ci.org/crowdcode-de/java-benchmark)
+
 These benchmarks are build with [OpenJDK JMH](https://openjdk.java.net/projects/code-tools/jmh/).
 
 Just another collection of typical Java Code Benchmarks.
