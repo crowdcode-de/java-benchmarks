@@ -28,9 +28,9 @@ mvn archetype:generate
        -Dversion=1.0-SNAPSHOT
 ```
 
-## Use Multiply Instead Of Divide (`MultiplyVsDivisionBenchmark`)
+## Use Multiply Instead Of Divide 
 
-It is faster to multiply than to divide
+Check `MultiplyVsDivisionBenchmark` to see that it is faster to multiply than to divide doubles.
 
 ```
     double divisor = 10.0;
@@ -58,7 +58,9 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 |MultiplyVsDivisionBenchmark.divideDoublesWithMultiply | thrpt |   5  | 508495,675 | ± 8033,898 | ops/s|
 
 
-## Random Subset Without Duplicates - `RandomSubsetBenchmark`
+## Random Subset Without Duplicates
+ 
+`RandomSubsetBenchmark`
 
 Results with JDK 13:
 
@@ -73,7 +75,9 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 |RandomSubsetBenchmark.subsetWithStreams               | thrpt |   5|  1200,939 | ± 140,346 | ops/s|
 
 
-## Date Parsing And Adding An Hour Benchmark - `DateBenchmark`
+## Date Parsing And Adding An Hour Benchmark 
+ 
+`DateBenchmark`
 
 |Benchmark                                             |  Mode |  Cnt |      Score |      Error | Units|
 |:-----------------------------------------------------|:-----:|:----:|:----------:|:----------:|:----:|
