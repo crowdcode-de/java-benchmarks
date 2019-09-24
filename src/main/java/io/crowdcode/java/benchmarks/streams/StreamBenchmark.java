@@ -35,18 +35,18 @@ public class StreamBenchmark {
 
 	@Benchmark
 	public void testLargeStreamParallel(ArrayState state, Blackhole blackhole) {
-		ArrayList<Double> collect = state.integerList
+		List<Double> collect = state.integerList
 				.stream()
 				.parallel()
 				.map(i -> Math.sqrt(i * 2 / ((i >> 3) + 1)))
-				.collect(Collectors.toCollection(ArrayList::new));
+				.collect(Collectors.toList());
 
 		blackhole.consume(collect);
 	}
 
 	@Benchmark
 	public void testLargeStream(ArrayState state, Blackhole blackhole) {
-		ArrayList<Double> collect = new ArrayList<>();
+		List<Double> collect = new ArrayList<>();
 		for (Integer i : state.integerList) {
 			collect.add(Math.sqrt(i * 2 / ((i >> 3) + 1)));
 		}
@@ -56,7 +56,7 @@ public class StreamBenchmark {
 
 	@Benchmark
 	public void testFor(ArrayState state, Blackhole blackhole) {
-		ArrayList<String> results = new ArrayList<>();
+		List<String> results = new ArrayList<>();
 
 		for (int i = 0; i < state.testList.size(); i++) {
 			String s = state.testList.get(i);
@@ -73,7 +73,7 @@ public class StreamBenchmark {
 
 	@Benchmark
 	public void testStreamInLoop(ArrayState state, Blackhole blackhole) {
-		ArrayList<String> output = new ArrayList<>();
+		List<String> output = new ArrayList<>();
 
 		for (int i = 0; i < 1000; i++) {
 			state.smallList
@@ -87,7 +87,7 @@ public class StreamBenchmark {
 
 	@Benchmark
 	public void testForInLoop(ArrayState state, Blackhole blackhole) {
-		ArrayList<String> output = new ArrayList<>();
+		List<String> output = new ArrayList<>();
 
 		for (int i = 0; i < 1000; i++) {
 			for (String s : state.smallList) {
