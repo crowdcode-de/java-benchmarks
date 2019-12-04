@@ -23,13 +23,16 @@ public class RandomSubsetBenchmark {
 
 	@Benchmark
 	public void subsetWithStreams(Blackhole blackhole) {
-		List<String> subset = new Random().ints(0, values.size())
-				.distinct()
-				.limit(MAX_SIZE)
-				.mapToObj(values::get)
-				.collect(Collectors.toList());
+		blackhole.consume(generateSubsetString());
+	}
 
-		blackhole.consume(subset);
+	public List<String> generateSubsetString() {
+		int value = 0;
+		return new Random().ints(0, values.size())
+					.distinct()
+					.limit(MAX_SIZE)
+					.mapToObj(values::get)
+					.collect(Collectors.toList());
 	}
 
 	@Benchmark
