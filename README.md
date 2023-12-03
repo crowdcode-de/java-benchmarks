@@ -75,7 +75,7 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 Results with JDK 13:
 
 ````
-java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivisionBenchmark
+java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 RandomSubsetBenchmark
 ````
 
 |Benchmark                                             |  Mode |  Cnt |      Score |      Error | Units|
@@ -88,6 +88,11 @@ java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 MultiplyVsDivis
 ### Date Parsing And Adding An Hour Benchmark 
  
 `DateBenchmark`
+
+
+````
+java -Xmx1G -jar target/benchmarks.jar -f 1 -r 1 -i 5 -w 1 -wi 5 DateBenchmark
+````
 
 |Benchmark                                             |  Mode |  Cnt |      Score |      Error | Units|
 |:-----------------------------------------------------|:-----:|:----:|:----------:|:----------:|:----:|
@@ -113,4 +118,3 @@ Run with JDK 12 and `java -jar target/benchmarks.jar -f 1 -r 2 -w 2 -wi 5 Initia
 ### Created By
 
 [CROWDCODE GmbH & Co. KG](https://www.crowdcode.io)
-
