@@ -16,6 +16,11 @@ import java.util.UUID;
 public class HashMapState {
 
     public static final int AMOUNT = 50_000;
+    public static final int LOOKUPS = 1_000;
+
+    private final HashCodeKey[] lookupKeys = new HashCodeKey[LOOKUPS];
+    private final BrokenHashCodeKey[] brokenLookupKeys = new BrokenHashCodeKey[LOOKUPS];
+    private final BrokenHashCodeComparableKey[] brokenComparableLookupKeys = new BrokenHashCodeComparableKey[LOOKUPS];
 
     private HashMap<HashCodeKey, String> hashMap;
     private HashMap<BrokenHashCodeKey, String> hashMapWithBrokenHashCode;
@@ -32,6 +37,26 @@ public class HashMapState {
             hashMapWithBrokenHashCode.put(new BrokenHashCodeKey(i), uuid);
             hashMapWithBrokenHashCodeComparable.put(new BrokenHashCodeComparableKey(i), uuid);
         }
+
+        // keys to look up, spread evenly over all stored keys
+        for (int i = 0; i < LOOKUPS; i++) {
+            long key = (long) i * (AMOUNT / LOOKUPS);
+            lookupKeys[i] = new HashCodeKey(key);
+            brokenLookupKeys[i] = new BrokenHashCodeKey(key);
+            brokenComparableLookupKeys[i] = new BrokenHashCodeComparableKey(key);
+        }
+    }
+
+    public HashCodeKey[] getLookupKeys() {
+        return lookupKeys;
+    }
+
+    public BrokenHashCodeKey[] getBrokenLookupKeys() {
+        return brokenLookupKeys;
+    }
+
+    public BrokenHashCodeComparableKey[] getBrokenComparableLookupKeys() {
+        return brokenComparableLookupKeys;
     }
 
     public HashMap<HashCodeKey, String> getHashMap() {

@@ -14,16 +14,16 @@ public class LocalDateTimeNowBenchmark {
 
 
 	@Benchmark
-	public void previousIsRunning() {
-		boolean result = (beginDateTime.isBefore(LocalDateTime.now())
+	public boolean previousIsRunning() {
+		return (beginDateTime.isBefore(LocalDateTime.now())
 				|| beginDateTime.isEqual(LocalDateTime.now()))
 				&& expireDateTime.isAfter(LocalDateTime.now());
 	}
 
 	@Benchmark
-	public void optimizedIsRunning() {
+	public boolean optimizedIsRunning() {
 		LocalDateTime now = LocalDateTime.now();
-		boolean result = (beginDateTime.isBefore(now)
+		return (beginDateTime.isBefore(now)
 				|| beginDateTime.isEqual(now))
 				&& expireDateTime.isAfter(now);
 	}
