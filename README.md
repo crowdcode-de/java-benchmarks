@@ -30,6 +30,12 @@ mvn archetype:generate
        -Dversion=1.0-SNAPSHOT
 ```
 
+### Workshop Exercise
+
+`io.crowdcode.java.benchmarks.exercise.ContainsBenchmark` is an unfinished benchmark with `TODO` markers.
+It does not show up in `java -jar target/benchmarks.jar -l` until the first benchmark method is added.
+The task description and the solution are part of the CROWDCODE workshop material.
+
 ## Benchmark Results
 
 REMEMBER: The numbers below are just data. To gain reusable insights, you need to follow up on
